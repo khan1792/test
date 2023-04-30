@@ -15,5 +15,3 @@ data['link'] = data['link'].apply(make_clickable)
 i = st.number_input('Insert a number', min_value = 1, format = '%i')
 
 st.write(data[i-1:i].to_html(escape=False, index=False), unsafe_allow_html=True)
-st.video('https://twitter.com/MasonJameson99/status/1549911015843803137/video/1')
-
