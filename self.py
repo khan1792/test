@@ -4,6 +4,7 @@ import pandas as pd
 data = pd.read_csv('check.csv')
 y = st.number_input('Insert a number', min_value = 2006, value = 2019, format = '%i')
 data = data[data['year']==y][['link', 'text', 'user_description', 'user_name', 'year']]
+data.index = range(len(data))
 
 def make_clickable(link):
     # target _blank to open new window
