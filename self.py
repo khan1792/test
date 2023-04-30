@@ -16,4 +16,4 @@ data['link'] = data['link'].apply(make_clickable)
 
 i = st.number_input('Insert a number', min_value = 1, format = '%i')
 
-st.write(data[i-1:i].to_html(escape=False, index=False), unsafe_allow_html=True)
+st.write(data[(i-1)*10:i*10].to_html(escape=False, index=False), unsafe_allow_html=True)
