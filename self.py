@@ -2,7 +2,8 @@ import streamlit as st
 import pandas as pd
 
 data = pd.read_csv('check.csv')
-data = data[data['year']>2018][['link', 'text', 'user_description', 'user_name', 'year']]
+y = st.number_input('Insert a number', min_value = 2006, value = 2019, format = '%i')
+data = data[data['year']==y][['link', 'text', 'user_description', 'user_name', 'year']]
 
 def make_clickable(link):
     # target _blank to open new window
