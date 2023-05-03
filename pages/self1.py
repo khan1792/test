@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 
 data = pd.read_csv('check1.csv')
+data = data.sample(frac = 1, random_state = 10)
 y = st.number_input('Insert a number', min_value = 2006, value = 2019, format = '%i')
 rem = st.text_input(label="remove words", value = '共产党|中共|中国人民|驻京企业|風在吼|义和团|李鸿章|清朝|尋找所有人的匿名問題|图文小说|国有资产|风在吼')
 data = data[data['year']==y][['link', 'text', 'user_description', 'user_name', 'year']]
