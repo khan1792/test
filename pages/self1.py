@@ -8,7 +8,7 @@ rem = st.text_input(label="remove words", value = '共产党|中共|中国人民
 data = data[data['year']==y][['link', 'text', 'user_description', 'user_name', 'year']]
 data = data[~data['text'].str.contains(rem)]
 keyword = st.text_input(label="words", value = '')
-data=data[data['text'].str.contains(keyword)]
+data=data[data['user_description'].str.contains(keyword)]
 data.index = range(len(data))
 
 def make_clickable(link):
